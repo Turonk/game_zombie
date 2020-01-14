@@ -12,28 +12,28 @@ pygame.display.set_caption('Run ZOMBIE! RUN!')
 
 
 
-jump_sound = pygame.mixer.Sound('Rr.wav')
-fall_sound = pygame.mixer.Sound('shlep.wav')
-over_sound = pygame.mixer.Sound('over.wav')
-boom_sound = pygame.mixer.Sound('boom.wav')
-heart_plus_sound = pygame.mixer.Sound('levelup.wav')
-shot_sound = pygame.mixer.Sound('Shot.wav')
+jump_sound = pygame.mixer.Sound('src\music\Rr.wav')
+fall_sound = pygame.mixer.Sound('src\music\shlep.wav')
+over_sound = pygame.mixer.Sound('src\music\over.wav')
+boom_sound = pygame.mixer.Sound('src/music/boom.wav')
+heart_plus_sound = pygame.mixer.Sound('src\music\levelup.wav')
+shot_sound = pygame.mixer.Sound('src\music\Shot.wav')
 
-icon = pygame.image.load('run.png')
+icon = pygame.image.load('src/img/run.png')
 pygame.display.set_icon(icon)
 
-cactus_img = [pygame.image.load('box.png'), pygame.image.load('longfoot.png'), pygame.image.load('wood.png')]
+cactus_img = [pygame.image.load('src/img/box.png'), pygame.image.load('src\img\longfoot.png'), pygame.image.load('src\img\wood.png')]
 cactus_options = [69, 449, 37, 410, 40, 420]
 
-stone_img = [pygame.image.load('Stone0.png'), pygame.image.load('Stone1.png')]
-cloud_img = [pygame.image.load('Cloud0.png'), pygame.image.load('Cloud1.png')]
+stone_img = [pygame.image.load('src\img\Stone0.png'), pygame.image.load('src\img\Stone1.png')]
+cloud_img = [pygame.image.load('src\img\Cloud0.png'), pygame.image.load('src\img\Cloud1.png')]
 
-z_img = [pygame.image.load('zombi0.png'), pygame.image.load('zombi1.png'), pygame.image.load('zombi1.png'), pygame.image.load('zombi2.png'), pygame.image.load('zombi3.png'), pygame.image.load('zombi4.png')]
+z_img = [pygame.image.load('src\img\zombi0.png'), pygame.image.load('src\img\zombi1.png'), pygame.image.load('src\img\zombi1.png'), pygame.image.load('src\img\zombi2.png'), pygame.image.load('src\img\zombi3.png'), pygame.image.load('src\img\zombi4.png')]
 
-health_img = pygame.image.load('serdce.png')
+health_img = pygame.image.load('src\img\serdce.png')
 # health_img = pygame.transform.scale( health_img, (30, 30))
 
-bullet_img = pygame.image.load('skell.png')
+bullet_img = pygame.image.load('src\img\skell.png')
 bullet_img = pygame.transform.scale( bullet_img, (20, 20))
 
 img_counter = 0
@@ -133,11 +133,11 @@ max_above = 0
 
 
 def show_menu():
-    pygame.mixer.music.load('murlok.mp3')
+    pygame.mixer.music.load('src\music\murlok.mp3')
     pygame.mixer.music.set_volume(0.3)
     pygame.mixer.music.play(-1)
 
-    menu_backgraund = pygame.image.load('fon.png')
+    menu_backgraund = pygame.image.load('src/img/fon.png')
 
     start_btn = Button(130, 60)
     quit_btn = Button(130, 60)
@@ -159,7 +159,7 @@ def show_menu():
 
 def start_game():
     global scores, make_jump, jump_counter, usr_y, health, cooldown
-    pygame.mixer.music.load('background.mp3')
+    pygame.mixer.music.load('src/music/background.mp3')
     pygame.mixer.music.set_volume(0.3)
     pygame.mixer.music.play(-1)
     while game_cycle():
@@ -179,7 +179,7 @@ def game_cycle():
     game = True
     cactus_arr = []
     create_cactus_arr(cactus_arr)
-    land = pygame.image.load('desert.png')
+    land = pygame.image.load('src/img/desert.png')
 
     stone, cloud = open_random_objects()
     heart = Object(display_width, 280, 30, health_img, 4)
